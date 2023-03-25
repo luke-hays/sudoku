@@ -42,13 +42,45 @@ class TestSudoku(unittest.TestCase):
 
     self.assertEqual(sudoku.solver(grid), solvedGrid)
 
-  @unittest.skip('')
   def test_solver_6x6(self):
-    self.assertEqual(True, False)
+    grid = [[None ,1   ,3   ,None ,5    ,None ],
+            [None ,None,5   ,None ,None ,None ],
+            [5    ,None,None,4, 1 ,None       ],
+            [1    ,None,None,None ,None ,None ],
+            [None ,None,2   ,1    ,None ,5    ],
+            [3    ,None,1   ,None ,4    ,None ]]
+    
+    solvedGrid = [[2, 1, 3, 6, 5, 4],
+                  [4, 2, 5, 3, 6, 1],
+                  [5, 3, 6, 4, 1, 2],
+                  [1, 6, 4, 5, 2, 3],
+                  [6, 4, 2, 1, 3, 5],
+                  [3, 5, 1, 2, 4, 6]]
 
-  @unittest.skip('')
+    self.assertEqual(sudoku.solver(grid), solvedGrid)
+  
   def test_solver_9x9(self):
-    self.assertEqual(True, False)
+    grid = [[None,6,None,1,None,4,None,5,None],
+            [None,None,8,3,None,5,6,None,None],
+            [2,None,None,None,None,None,None,None,1],
+            [8,None,None,4,None,7,None,None,6],
+            [None,None,6,None,None,None,3,None,None],
+            [7,None,None,9,None,1,None,None,4],
+            [5,None,None,None,None,None,None,None,2],
+            [None,None,7,2,None,6,9,None,None],
+            [None,4,None,5,None,8,None,7,None]]
+    
+    solvedGrid = [[3, 6, 2, 1, 7, 4, 8, 5, 9],
+                  [1, 2, 8, 3, 4, 5, 6, 9, 7],
+                  [2, 3, 4, 6, 5, 9, 7, 8, 1],
+                  [8, 1, 3, 4, 9, 7, 5, 2, 6],
+                  [9, 7, 6, 8, 1, 2, 3, 4, 5],
+                  [7, 8, 5, 9, 6, 1, 2, 3, 4],
+                  [5, 9, 1, 7, 8, 3, 4, 6, 2],
+                  [4, 5, 7, 2, 3, 6, 9, 1, 8],
+                  [6, 4, 9, 5, 2, 8, 1, 7, 3]]
+
+    self.assertEqual(sudoku.solver(grid), solvedGrid)
 
 if __name__ == '__main__':
   unittest.main()

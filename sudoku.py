@@ -5,9 +5,7 @@ from queue import PriorityQueue
 
 def formatGrid(grid):
   for row in range(len(grid)):
-    for col in range(len(grid)):
-      print(f'|{grid[row][col]}\t| ', end='')
-    print('\n')
+    print(grid[row])
 
 def generator():
   return None
@@ -61,7 +59,7 @@ def solver(grid):
     newGrid = state[1]
 
     if (gridInSolvedState(newGrid)): 
-      print(newGrid)
+      # formatGrid(newGrid)
       return newGrid
 
     pos = getEmptyPos(newGrid)
